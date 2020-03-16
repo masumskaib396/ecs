@@ -54,8 +54,7 @@ final class Dcs_Extension {
 			return;
 		}
 
-		//add_action( 'elementor/editor/after_enqueue_styles', array ( $this, 'pawelements_editor_styles' ) );
-		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
+		
 		
 	}
 

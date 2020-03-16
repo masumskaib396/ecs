@@ -20,7 +20,6 @@ class Ecs_Custom_Css {
 	public function __construct() {
 		add_action('elementor/element/after_section_end', [__CLASS__, 'add_controls_section'], 10, 3);
 		add_action('elementor/element/parse_css', [$this, 'add_post_css'], 10, 2);
-		//add_action( 'elementor/post-css-file/parse', [ $this, 'add_page_settings_css' ] );
 		add_action( 'elementor/css-file/post/parse', [ $this, 'add_page_settings_css' ] );
 		add_action( 'elementor/editor/after_enqueue_scripts', [$this, 'enqueue_editor_scripts']);
 	}
@@ -125,7 +124,7 @@ class Ecs_Custom_Css {
 	 * Enqueue Editor Script
 	 */
 	public function enqueue_editor_scripts() {
-		wp_enqueue_script('ecs-editor-support-js', ECS_ASSETS_PUBLIC . '/js/editor-support.js', array('jquery'), '', true);
+		wp_enqueue_script('ecs-editor-support-js', ECS_ASSETS_PUBLIC . '/js/custom-support.js', array('jquery'), '', true);
 	}
 
 }
